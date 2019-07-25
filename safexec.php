@@ -44,6 +44,14 @@ var_dump($o2);
 echo safexec('whoami');
 
 
+Todo:
+disable rm -rf by default. Maybe with:
+
+/(?:^|\&\&?|\;|\|\|\s*\{|\|)\s*rm\s+\-(?:rf|fr)/m
+
+https://regex101.com/r/sOhoJ8/1
+
+...or it's just overkill - it is to be decided later.
 
 */
 
