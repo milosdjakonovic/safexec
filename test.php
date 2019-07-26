@@ -34,6 +34,10 @@ register_shutdown_function(function(){
 ";
 });
 
+function C_append($id, $val){
+    $GLOBALS[$id] = $val;
+}
+
 /*Check("desc",function(){
 
 });*/
@@ -79,6 +83,19 @@ Check("test of injection of command echo", function($a){
     return false;
 });
 
+
+Check('A simple example', function($a){
+    global $$a; $$a = 'dasdsad';
+    return true;
+});
+
+
+Check('A simple example 2', function($a){
+    C_append($a, 'dasdsad');
+    return true;
+});
+
+
 if(DIRECTORY_SEPARATOR === '/'){
     //*nix
    
@@ -101,3 +118,5 @@ if(DIRECTORY_SEPARATOR === '/'){
     });    
     
 }
+
+
