@@ -45,8 +45,6 @@ function C_append($id, $val){
 require('safexec.php');
 
 
-// #php pro tip: when you want to avoid name colision by prefixing var or fn name with 'custom', you are increasing the odds of colision.
-
 Check("minimal example - command without arguments (whoami)", function($additional){
     $GLOBALS[$additional] = "simple as that";
     return safexec('whoami') === true;
